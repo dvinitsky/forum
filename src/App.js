@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import TopicList from './Components/TopicList/TopicList';
 import PostList from './Components/PostList/PostList';
-
+//test test
 class App extends Component {
   constructor(props){
     super(props);
@@ -48,14 +48,14 @@ class App extends Component {
       ],
       selectedTopicID: 0
     };
-    
+
   }
-  
+
   chooseTopic(id){
     this.setState({selectedTopicID: id});
     //sets the state properly
   }
-  
+
   render() {
     return (
       <div className="App">
