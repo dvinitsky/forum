@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import TopicList from './Components/TopicList/TopicList';
 import PostList from './Components/PostList/PostList';
-//test test
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -19,7 +19,6 @@ class App extends Component {
           name: 'TV'
         }
       ],
-      //doing stuff herea nd omreo a 
       postList: [
           { topicID: 0,
             text: "Sample Text 1"
