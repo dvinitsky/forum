@@ -5,34 +5,34 @@ import Post from '../Post/Post';
 class PostList extends Component {
   constructor(props){
     super(props);
+    this.chooseTopic = this.chooseTopic.bind(this);
     this.state={
       selectedTopicID: this.props.selectedTopicID
       //is not being set properly
     };
   }
-  
-  
+
+  chooseTopic(id){
+    this.setState({selectedTopicID: id});
+  }
+
 
   render() {
-      console.log('selected id: ' + this.state.selectedTopicID);
-
-    
     let key = 0;
-    
-    let filteredArray = this.props.posts.filter(post => post.topicID === this.state.selectedTopicID);
-    console.log('filteredarra:' + filteredArray[0].text)
-    
+
+    let filteredArray = this.props.posts.filter(post => post.topicID === this.props.selectedTopicID);
+
       return (
         <div className="PostList">
-        
+
           {filteredArray.map(post => {
             key++;
-            return <Post key={key} post={post}/>  
+            return <Post key={key} post={post}/>
             })}
-      
-        
+
+
         </div>
-      
+
       )
   }
 }

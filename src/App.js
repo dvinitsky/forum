@@ -53,7 +53,6 @@ class App extends Component {
 
   chooseTopic(id){
     this.setState({selectedTopicID: id});
-    //sets the state properly
   }
 
   render() {
