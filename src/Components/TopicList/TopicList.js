@@ -8,7 +8,7 @@ class TopicList extends Component {
     let key = -1;
 
     return (
-      <div className="TopicList">
+      <div className="container">
 
         {this.props.topicList.map(topic => {
           key++;

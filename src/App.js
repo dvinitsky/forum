@@ -61,8 +61,13 @@ class App extends Component {
           <h1 className="App-title">Blue Forum</h1>
           <div className="Body">
             <TopicList onClick={this.chooseTopic} topicList={this.state.topicList}/>
+
             <PostList selectedTopicID={this.state.selectedTopicID} posts={this.state.postList}/>
+
           </div>
+
+
+
       </div>
     );
   }
