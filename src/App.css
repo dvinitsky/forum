@@ -5,13 +5,13 @@
   color: white;
 }
 
-
-.Body {
-  text-align: left;
-}
-
 .App-title {
   text-align: center;
   font-size: 2em;
   color: darkblue;
+}
+
+main {
+  background-color: #3661a5;
+  padding: 10px 0 10px 0;
 }

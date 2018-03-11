@@ -8,7 +8,6 @@ class PostList extends Component {
     this.chooseTopic = this.chooseTopic.bind(this);
     this.state={
       selectedTopicID: this.props.selectedTopicID
-      //is not being set properly
     };
   }
 

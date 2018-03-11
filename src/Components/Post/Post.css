@@ -1,0 +1,17 @@
+.Post {
+  margin-bottom: 30px;
+}
+
+.post-body {
+  margin-left: 20px;
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 14px;
+}
+.post-footer {
+  text-align: left;
+  font-size: 10px;
+  color: grey;
+  margin: 0 0 0 10px;
+  padding: 0;
+}

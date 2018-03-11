@@ -3,6 +3,7 @@ import './App.css';
 import TopicList from './Components/TopicList/TopicList';
 import PostList from './Components/PostList/PostList';
 
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -21,11 +22,17 @@ class App extends Component {
       ],
       postList: [
           { topicID: 0,
-            text: "Sample Text 1"
+            text: "Hi! My name is Daniel, and this is my first time posting. I'm opening this forum up to anyone who likes the color blue, or even tolerates it.... so everyone!!",
+            username: "dannyboy",
+            date: "9-13-17"
           }, { topicID: 0,
-            text: "Sample Text 2"
+            text: "Anyone know how to make a website? I'd really love one.",
+            username: "kellbell",
+            date: "9-15-17"
           }, { topicID: 0,
-            text: "Sample Text 3"
+            text: "I can help you with that.... for a price.",
+            username: "dannyboy",
+            date: "9-21-17"
           }, { topicID: 1,
             text: "Sample Text 4"
           }, { topicID: 1,
@@ -57,18 +64,19 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <html className="App">
+        <header>
           <h1 className="App-title">Blue Forum</h1>
-          <div className="Body">
+          <nav>
             <TopicList onClick={this.chooseTopic} topicList={this.state.topicList}/>
+          </nav>
+        </header>
 
+        <main>
             <PostList selectedTopicID={this.state.selectedTopicID} posts={this.state.postList}/>
+        </main>
 
-          </div>
-
-
-
-      </div>
+      </html>
     );
   }
 }
