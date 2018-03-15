@@ -1,7 +1,7 @@
 .App {
   --post-margin-left: 20px;
   position: relative;
-  background-color: #77AAFF;
+  background: linear-gradient(brown, #77AAFF);
   padding: 20px;
   color: white;
 }
@@ -13,13 +13,18 @@
 }
 
 main {
-  background-color: #3661a5;
+  background-color: #77AAFF;
   padding: 10px 0 10px 0;
 }
 textarea{
   margin-left: var(--post-margin-left);
   display: block;
 }
-button {
+.post-submit {
   margin: 10px 0 10px var(--post-margin-left);
+}
+
+h2 {
+  font-size: 14px;
+  color: black;
 }

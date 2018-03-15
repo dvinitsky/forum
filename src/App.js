@@ -11,6 +11,9 @@ class App extends Component {
     this.captureComment = this.captureComment.bind(this);
     this.captureComment = this.captureComment.bind(this);
     this.postComment = this.postComment.bind(this);
+    this.captureUsername = this.captureUsername.bind(this);
+    this.showUsername = this.showUsername.bind(this);
+    this.getDate = this.getDate.bind(this);
     this.state={
       topicList: [
         { topicID: 0,
@@ -70,12 +73,20 @@ class App extends Component {
     this.setState({comment: e.target.value});
   }
 
+  getDate(){
+    let fullDate = new Date();
+    let date = fullDate.getDate();
+    let month = fullDate.getMonth() + 1;
+    let year = fullDate.getFullYear().toString().substring(2,4);
+    return month + '-' + date + '-' + year;
+  }
+
   postComment(){
     let newPost = {
       topicID: this.state.selectedTopicID,
       text: this.state.comment,
-      username: "DV",
-      date: "1-1-2018"
+      username: this.state.currentUsername,
+      date: this.getDate()
     };
 
     let tempPostList = this.state.postList;
@@ -85,21 +96,40 @@ class App extends Component {
     document.getElementById('text').value='';
   }
 
+  captureUsername(e){
+    this.setState({username: e.target.value});
+    if(e.key === 'Enter'){
+      this.showUsername();
+    }
+  }
+
+  showUsername(){
+    document.getElementById('username').innerHTML = 'Current Username: '  + this.state.username;
+    document.getElementById('username-input').value='';
+    this.setState({currentUsername: this.state.username});
+
+  }
+
   render() {
 
     return (
       <div className="App">
         <header>
-          <h1 className="App-title">Blue Forum</h1>
-          <nav>
-            <TopicList onClick={this.chooseTopic} topicList={this.state.topicList}/>
-          </nav>
+              <h2>Username:</h2>
+              <input id="username-input" className="username-input" onChange={this.captureUsername}/>
+              <br />
+              <button onClick={this.showUsername}>Submit</button>
+              <p id='username'></p>
+              <h1 className="App-title">Blue Forum</h1>
+            <nav>
+              <TopicList onClick={this.chooseTopic} topicList={this.state.topicList}/>
+            </nav>
         </header>
 
         <main>
             <PostList selectedTopicID={this.state.selectedTopicID} posts={this.state.postList}/>
             <textarea id='text' onChange={this.captureComment} placeholder="Write a comment"></textarea>
-            <button onClick={this.postComment}>Submit</button>
+            <button className='post-submit' onClick={this.postComment}>Submit</button>
         </main>
 
       </div>

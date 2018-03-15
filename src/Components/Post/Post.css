@@ -11,7 +11,7 @@
 .post-footer {
   text-align: left;
   font-size: 10px;
-  color: grey;
+  color: #b1bbcc;
   margin: 0 0 0 var(--post-margin-left);
   padding: 0;
 }
