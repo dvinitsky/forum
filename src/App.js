@@ -14,6 +14,7 @@ class App extends Component {
     this.captureUsername = this.captureUsername.bind(this);
     this.showUsername = this.showUsername.bind(this);
     this.getDate = this.getDate.bind(this);
+    this.ifEnterSubmit = this.ifEnterSubmit.bind(this);
     this.state={
       topicList: [
         { topicID: 0,
@@ -98,6 +99,9 @@ class App extends Component {
 
   captureUsername(e){
     this.setState({username: e.target.value});
+  }
+
+  ifEnterSubmit(e){
     if(e.key === 'Enter'){
       this.showUsername();
     }
@@ -116,7 +120,7 @@ class App extends Component {
       <div className="App">
         <header>
               <h2>Username:</h2>
-              <input id="username-input" className="username-input" onChange={this.captureUsername}/>
+              <input id="username-input" className="username-input" onChange={this.captureUsername} onKeyPress={this.ifEnterSubmit}/>
               <br />
               <button onClick={this.showUsername}>Submit</button>
               <p id='username'></p>
