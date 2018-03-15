@@ -3,7 +3,7 @@
 }
 
 .post-body {
-  margin-left: 20px;
+  margin-left: var(--post-margin-left);
   margin-bottom: 5px;
   text-align: left;
   font-size: 14px;
@@ -12,6 +12,6 @@
   text-align: left;
   font-size: 10px;
   color: grey;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 var(--post-margin-left);
   padding: 0;
 }

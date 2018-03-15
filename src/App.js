@@ -8,6 +8,9 @@ class App extends Component {
   constructor(props){
     super(props);
     this.chooseTopic = this.chooseTopic.bind(this);
+    this.captureComment = this.captureComment.bind(this);
+    this.captureComment = this.captureComment.bind(this);
+    this.postComment = this.postComment.bind(this);
     this.state={
       topicList: [
         { topicID: 0,
@@ -58,13 +61,34 @@ class App extends Component {
 
   }
 
+
   chooseTopic(id){
     this.setState({selectedTopicID: id});
   }
 
+  captureComment(e){
+    this.setState({comment: e.target.value});
+  }
+
+  postComment(){
+    let newPost = {
+      topicID: this.state.selectedTopicID,
+      text: this.state.comment,
+      username: "DV",
+      date: "1-1-2018"
+    };
+
+    let tempPostList = this.state.postList;
+    tempPostList.push(newPost);
+
+    this.setState({postList: tempPostList});
+    document.getElementById('text').value='';
+  }
+
   render() {
+
     return (
-      <html className="App">
+      <div className="App">
         <header>
           <h1 className="App-title">Blue Forum</h1>
           <nav>
@@ -74,9 +98,11 @@ class App extends Component {
 
         <main>
             <PostList selectedTopicID={this.state.selectedTopicID} posts={this.state.postList}/>
+            <textarea id='text' onChange={this.captureComment} placeholder="Write a comment"></textarea>
+            <button onClick={this.postComment}>Submit</button>
         </main>
 
-      </html>
+      </div>
     );
   }
 }
