@@ -118,23 +118,30 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header>
-              <h2>Username:</h2>
-              <input id="username-input" className="username-input" onChange={this.captureUsername} onKeyPress={this.ifEnterSubmit}/>
-              <br />
-              <button onClick={this.showUsername}>Submit</button>
-              <p id='username'></p>
-              <h1 className="App-title">Blue Forum</h1>
-            <nav>
-              <TopicList onClick={this.chooseTopic} topicList={this.state.topicList}/>
-            </nav>
-        </header>
+          <nav>
+            <TopicList onClick={this.chooseTopic} topicList={this.state.topicList}/>
+          </nav>
 
-        <main>
-            <PostList selectedTopicID={this.state.selectedTopicID} posts={this.state.postList}/>
-            <textarea id='text' onChange={this.captureComment} placeholder="Write a comment"></textarea>
-            <button className='post-submit' onClick={this.postComment}>Submit</button>
-        </main>
+          <header>
+              <div id='username-group'>
+                <h2>Username:</h2>
+                <input id="username-input" className="username-input" onChange={this.captureUsername} onKeyPress={this.ifEnterSubmit}/>
+                <br />
+                <button onClick={this.showUsername} id='username-submit'>Submit</button>
+                <p id='username'></p>
+              </div>
+          </header>
+      
+
+          <div>
+            <h1 className="App-title">Blue Forum</h1>
+
+            <main>
+              <PostList selectedTopicID={this.state.selectedTopicID} posts={this.state.postList}/>
+              <textarea id='text' onChange={this.captureComment} placeholder="Write a comment"></textarea>
+              <button className='post-submit' onClick={this.postComment}>Submit</button>
+            </main>
+          </div>
 
       </div>
     );

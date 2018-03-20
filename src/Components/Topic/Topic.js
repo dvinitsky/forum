@@ -16,11 +16,7 @@ class Topic extends Component {
     let name = this.props.topicList[this.props.id].name;
 
     return (
-      <div>
-        <div onClick={this.chooseTopic} className="Topic">{name}</div>
-        <div>
-        </div>
-      </div>
+      <div onClick={this.chooseTopic} className="Topic">{name}</div>
     );
   }
 }
