@@ -118,34 +118,45 @@ class App extends Component {
 
     return (
       <div className="App">
+        
+        <div id='test1'>
+
+          <div id='username-group'>
+            <h2>Username:</h2>
+            <input id="username-input" className="username-input" onChange={this.captureUsername} onKeyPress={this.ifEnterSubmit}/>
+            <br />
+            <button onClick={this.showUsername} id='username-submit'>Submit</button>
+              <p id='username'></p>
+          </div>
+          
           <nav>
             <TopicList onClick={this.chooseTopic} topicList={this.state.topicList}/>
           </nav>
-
-          <header>
-              <div id='username-group'>
-                <h2>Username:</h2>
-                <input id="username-input" className="username-input" onChange={this.captureUsername} onKeyPress={this.ifEnterSubmit}/>
-                <br />
-                <button onClick={this.showUsername} id='username-submit'>Submit</button>
-                <p id='username'></p>
-              </div>
-          </header>
+  
+        </div>
       
 
-          <div>
-            <h1 className="App-title">Blue Forum</h1>
+        <div id='test2'>
+          <h1 className="App-title">Blue Forum</h1>
 
-            <main>
-              <PostList selectedTopicID={this.state.selectedTopicID} posts={this.state.postList}/>
-              <textarea id='text' onChange={this.captureComment} placeholder="Write a comment"></textarea>
-              <button className='post-submit' onClick={this.postComment}>Submit</button>
-            </main>
-          </div>
+          <main>
+            <PostList selectedTopicID={this.state.selectedTopicID} posts={this.state.postList}/>
+            <textarea id='text' onChange={this.captureComment} placeholder="Write a comment"></textarea>
+            <button className='post-submit' onClick={this.postComment}>Submit</button>
+          </main>
 
+          <h3>Site by Daniel Vinitsky</h3>
+          <h3><a href="http://www.danielvinitsky.com">danielvinitsky.com</a></h3>
+
+        </div>
+
+        
+        
       </div>
     );
   }
 }
 
 export default App;
+
+
