@@ -3,6 +3,7 @@ import './App.css';
 import TopicList from './Components/TopicList/TopicList';
 import PostList from './Components/PostList/PostList';
 
+//Eventually add direct messaging feature-- with Express/Node.js?
 
 class App extends Component {
   constructor(props){
